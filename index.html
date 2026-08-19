@@ -391,7 +391,7 @@
     <ul class="nav-links">
       <li><a href="#work">Work</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#background">Background</a></li>
+      <li><a href="#security">Security</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -511,26 +511,70 @@
         <a class="card-link" href="https://github.com/remybanks77/market-pulse-mcp" target="_blank" rel="noopener noreferrer">github.com/remybanks77/market-pulse-mcp</a>
       </article>
 
+      <article class="card">
+        <div class="card-head">
+          <h3>Secure Agent Execution Sandbox</h3>
+          <span class="card-tag">Infrastructure</span>
+        </div>
+        <p>
+          Untrusted, agent-generated code runs no-egress inside Kata Containers microVMs, admitted only through
+          a fail-closed permission gate, so a compromised or misbehaving agent workload cannot reach the network
+          or the host. Each workload gets its own guest kernel, separate from the host, and is scoped to a
+          files-in, one-command, one-output shape rather than an open shell. This is the same production
+          sandboxing pattern AI-infrastructure companies use for code-interpreter and agent workloads.
+        </p>
+        <div class="metric-row">
+          <span class="metric">No-egress microVM isolation</span>
+          <span class="metric">Fail-closed admission gate</span>
+          <span class="metric">Separate guest kernel</span>
+          <span class="metric">Files-in / one-command / one-output</span>
+        </div>
+        <div class="stack-row">Kata Containers &middot; microVMs &middot; Linux &middot; Docker</div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h3>Large-Scale Data Extraction &amp; Lead Generation Pipeline</h3>
+          <span class="card-tag">Data engineering, live</span>
+        </div>
+        <p>
+          Headless browser automation combined with reverse-engineered private and hidden APIs, discovered via
+          Chrome DevTools Protocol traffic inspection, feeds a B2B lead database of 100K+ records across 9
+          verticals. Multi-signal scoring and enrichment stages qualify and rank leads before delivery.
+        </p>
+        <div class="metric-row">
+          <span class="metric">100K+ records</span>
+          <span class="metric">9 verticals</span>
+          <span class="metric">Hidden-API reverse engineering (CDP)</span>
+          <span class="metric">Multi-signal scoring</span>
+        </div>
+        <div class="stack-row">Python &middot; Chrome DevTools Protocol &middot; Headless browser automation &middot; PostgreSQL</div>
+      </article>
+
     </div>
   </section>
 
   <section class="wrap" id="orchestration">
     <div class="section-head">
       <p class="section-num">02</p>
-      <h2>Multi-agent orchestration</h2>
+      <h2>Multi-model agent orchestration</h2>
     </div>
     <div class="orch">
-      <h3>A custom Claude-based agent fleet</h3>
+      <h3>A vendor-agnostic, multi-model agent framework</h3>
       <p>
-        Operates a custom multi-agent orchestration system built on Claude: a planner coordinating specialized
-        sub-agents for autonomous software engineering, research, and operations, with custom MCP servers
-        exposing tools to the models and fail-closed permission gating throughout.
+        Built and operates a custom agent orchestration framework spanning five model providers, Claude, Codex,
+        Gemini, Grok, and Antigravity, routed by task rather than locked to a single vendor. The framework
+        includes 65+ specialized sub-agents and skills, persistent agent memory that carries context across
+        sessions, custom hooks and scheduled tasks for autonomous operation, and fail-closed permission gating
+        throughout. Custom MCP servers expose purpose-built tools to every model in the fleet.
       </p>
       <div class="orch-stats">
+        <span class="orch-stat">5-provider model fleet</span>
         <span class="orch-stat">65+ custom agents</span>
         <span class="orch-stat">65+ skills</span>
-        <span class="orch-stat">Custom hooks</span>
-        <span class="orch-stat">Scheduled tasks</span>
+        <span class="orch-stat">Persistent agent memory</span>
+        <span class="orch-stat">Custom hooks &amp; scheduled tasks</span>
+        <span class="orch-stat">Fail-closed permission gating</span>
       </div>
     </div>
   </section>
@@ -603,14 +647,37 @@
     </div>
   </section>
 
-  <section class="wrap" id="background">
+  <section class="wrap" id="security">
     <div class="section-head">
       <p class="section-num">04</p>
-      <h2>Background</h2>
+      <h2>Security and military background</h2>
+      <p class="section-sub">Six years hardening DoD networks is where the fail-closed discipline behind the AI infrastructure work above comes from.</p>
     </div>
-    <div class="background-line">
+    <div class="orch">
+      <h3>U.S. Air Force, Cyber Systems Operations</h3>
+      <p>
+        Six years of active duty in the U.S. Air Force as a Cyber Systems Operations specialist, 52nd Combat
+        Communications Squadron, separating as a Senior Airman (E-4). Hardened Active Directory, VMware/vSphere/ESXi
+        virtualization, and DoD network infrastructure, and led ACAS/Nessus vulnerability scanning and remediation.
+        Delivered a $9.6M network upgrade and eliminated 3,000+ vulnerabilities across 16 domains, hardening 104
+        virtualized systems during Operation Juniper Shield in Niger, and engineered and fielded $7.2M in Theater
+        Deployable Communications packages. Two overseas deployments: Syria (Operation Inherent Resolve) and Niger
+        (Operation Juniper Shield). Fail-closed by default and verify before you trust it: the same standard now
+        applied to the sandboxing, permission gating, and agent-fleet architecture above.
+      </p>
+      <div class="metric-row">
+        <span class="metric">6 yrs USAF, Cyber Systems Operations</span>
+        <span class="metric">52nd Combat Communications Squadron</span>
+        <span class="metric">$9.6M network upgrade delivered</span>
+        <span class="metric">3,000+ vulnerabilities eliminated, 16 domains</span>
+        <span class="metric">104 virtualized systems hardened</span>
+        <span class="metric">$7.2M TDC packages fielded</span>
+        <span class="metric">2 overseas deployments</span>
+      </div>
+    </div>
+    <div class="background-line" style="margin-top:18px;">
       <span class="icon">&#9679;</span>
-      <span>6 years U.S. Air Force cyber systems operations (two overseas deployments), active CompTIA Security+.</span>
+      <span>Active CompTIA Security+, certification ID COMP001021119756 (renewed 2026, expires February 2029).</span>
     </div>
   </section>
 </main>

@@ -322,6 +322,50 @@
     border-radius: 6px;
   }
 
+  /* ---------- timeline ---------- */
+  .timeline{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .tl-item{
+    display: grid;
+    grid-template-columns: 168px 1fr;
+    gap: 0 24px;
+    padding: 20px 0;
+    border-top: 1px solid var(--border-soft);
+  }
+  .tl-item:first-child{ border-top: 1px solid var(--border); }
+  .tl-when{
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--text-faint);
+    padding-top: 4px;
+    white-space: nowrap;
+  }
+  .tl-what h3{
+    font-size: 1.02rem;
+    font-weight: 620;
+    margin: 0 0 6px;
+  }
+  .tl-org{
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: var(--text-dim);
+    margin-top: 2px;
+  }
+  .tl-what p{
+    color: var(--text-dim);
+    font-size: 0.94rem;
+    margin: 0;
+    max-width: 66ch;
+  }
+  @media (max-width: 700px){
+    .tl-item{ grid-template-columns: 1fr; gap: 6px; }
+    .tl-when{ padding-top: 0; }
+  }
+
   /* ---------- background ---------- */
   .background-line{
     display: flex;
@@ -390,6 +434,7 @@
     <span class="nav-name">Brandon Perez Martinez</span>
     <ul class="nav-links">
       <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#security">Security</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -403,9 +448,9 @@
     <h1>Brandon Y. Perez Martinez</h1>
     <p class="role">AI &amp; Software Engineer</p>
     <p class="value-prop">
-      <strong>Self-taught engineer with a U.S. Air Force cyber operations background</strong>, now building
-      production agentic AI systems: multi-agent orchestration, fine-tuned LLM pipelines, custom MCP tooling,
-      and full-stack applications shipped to real users.
+      <strong>Self-taught AI and software engineer</strong> with six years of U.S. Air Force cyber operations
+      experience and four-plus years building production agentic AI systems: multi-agent orchestration,
+      fine-tuned LLM pipelines, custom MCP tooling, and full-stack applications shipped to real users.
     </p>
     <div class="hero-meta">
       <span>Fairfax, VA</span>
@@ -416,6 +461,7 @@
     </div>
     <div class="hero-links">
       <a class="btn primary" href="mailto:perezbrandon1234567@gmail.com">Email</a>
+      <a class="btn" href="Brandon-Perez-Resume.pdf" target="_blank" rel="noopener noreferrer">Resume (PDF)</a>
       <a class="btn" href="https://www.linkedin.com/in/brandon-perez-063454224/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a class="btn" href="https://github.com/remybanks77" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
@@ -442,11 +488,11 @@
           weight evolution. Wired into five venues: live execution on Kalshi prediction markets, gated paper execution elsewhere until a strategy proves itself. CI-gated deploys.
         </p>
         <div class="metric-row">
-          <span class="metric">~60K LOC Python</span>
+          <span class="metric">1,100+ Python modules</span>
           <span class="metric">80+ live data streams</span>
           <span class="metric">26+ strategies</span>
           <span class="metric">VaR / CVaR risk engine</span>
-          <span class="metric">2,600+ commits</span>
+          <span class="metric">2,690+ commits</span>
         </div>
         <div class="stack-row">Python &middot; PostgreSQL / TimescaleDB &middot; LightGBM &middot; Hyperliquid &middot; Kalshi &middot; Polymarket &middot; Coinbase &middot; Alpaca</div>
         <p style="margin-top:14px; font-size:0.82rem; color:var(--text-faint);">Private codebase, VPS-deployed. Details available on request.</p>
@@ -476,17 +522,22 @@
 
       <article class="card">
         <div class="card-head">
-          <h3>Greenlight</h3>
-          <span class="card-tag blue">Client, live</span>
+          <h3>Greenlightdate</h3>
+          <span class="card-tag blue">Co-owner, live</span>
         </div>
         <p>
-          Production dating web application built from scratch for a founder client. Vite/React front end,
-          Express API, Drizzle ORM over Postgres, Stripe billing. Executed a live cloud migration with a
-          zero-downtime cutover, and hardened CI with CodeQL and OpenSSF Scorecard ahead of a security review.
+          Production dating web application built from scratch as co-owner and sole backend engineer, holding
+          15% equity. pnpm monorepo with a Vite/React front end, Express API, Drizzle ORM over Postgres, Stripe
+          billing, and OpenAPI to typed-client codegen. Executed a live cloud migration from Replit through
+          Vercel and Cloud Run to Cloudflare Pages and GCS with a zero-downtime cutover, and hardened CI with
+          CodeQL, dependency review, and OpenSSF Scorecard ahead of a security audit and compliance review.
         </p>
         <div class="metric-row">
-          <span class="metric">Vite / React</span>
-          <span class="metric">Express + Drizzle / Postgres</span>
+          <span class="metric">15% equity, sole backend engineer</span>
+          <span class="metric">pnpm monorepo</span>
+          <span class="metric">Vite / React + Express</span>
+          <span class="metric">Drizzle / Postgres</span>
+          <span class="metric">OpenAPI typed-client codegen</span>
           <span class="metric">Stripe billing</span>
           <span class="metric">Zero-downtime migration</span>
           <span class="metric">CodeQL + Scorecard CI</span>
@@ -563,7 +614,7 @@
       <h3>A vendor-agnostic, multi-model agent framework</h3>
       <p>
         Built and operates a custom agent orchestration framework spanning five model providers, Claude, Codex,
-        Gemini, Grok, and Antigravity, routed by task rather than locked to a single vendor. The framework
+        ChatGPT, Grok, and Antigravity, routed by task rather than locked to a single vendor. The framework
         includes 65+ specialized sub-agents and skills, persistent agent memory that carries context across
         sessions, custom hooks and scheduled tasks for autonomous operation, and fail-closed permission gating
         throughout. Custom MCP servers expose purpose-built tools to every model in the fleet.
@@ -586,9 +637,54 @@
     </div>
   </section>
 
-  <section class="wrap" id="skills">
+  <section class="wrap" id="experience">
     <div class="section-head">
       <p class="section-num">03</p>
+      <h2>Experience</h2>
+    </div>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-when">Aug 2022 to Present</div>
+        <div class="tl-what">
+          <h3>AI &amp; Software Engineer <span class="tl-org">Independent / Self-Employed, Remote</span></h3>
+          <p>
+            Build and operate the multi-agent orchestration framework, the fine-tuned pentest agent, the Kata
+            microVM execution sandbox, the multi-market trading platform, and the large-scale data-extraction
+            pipeline described above. Run the full Linux VPS estate behind them: systemd services, 150+ cron
+            jobs, real-time monitoring, and automated failover and alerting.
+          </p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-when">2026</div>
+        <div class="tl-what">
+          <h3>Full-Stack Engineer &amp; Co-owner (15%) <span class="tl-org">Greenlightdate</span></h3>
+          <p>
+            Sole backend engineer on a live production dating application. Built it from scratch, executed the
+            zero-downtime cloud migration, and took it through a security audit and compliance review.
+          </p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-when">Aug 2016 to Jul 2022</div>
+        <div class="tl-what">
+          <h3>Cyber Systems Operations Technician <span class="tl-org">U.S. Air Force, 52nd Combat Communications Squadron</span></h3>
+          <p>
+            Six years active duty, separating as a Senior Airman (E-4), with two overseas deployments. Detail in
+            the security and military section below.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="wrap" id="skills">
+    <div class="section-head">
+      <p class="section-num">04</p>
       <h2>Skills</h2>
     </div>
     <div class="skills-grid">
@@ -656,7 +752,7 @@
 
   <section class="wrap" id="security">
     <div class="section-head">
-      <p class="section-num">04</p>
+      <p class="section-num">05</p>
       <h2>Security and military background</h2>
       <p class="section-sub">Six years hardening DoD networks is where the fail-closed discipline behind the AI infrastructure work above comes from.</p>
     </div>
@@ -697,6 +793,7 @@
     </div>
     <div class="foot-links">
       <a class="btn primary" href="mailto:perezbrandon1234567@gmail.com">perezbrandon1234567@gmail.com</a>
+      <a class="btn" href="Brandon-Perez-Resume.pdf" target="_blank" rel="noopener noreferrer">Resume (PDF)</a>
       <a class="btn" href="https://www.linkedin.com/in/brandon-perez-063454224/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a class="btn" href="https://github.com/remybanks77" target="_blank" rel="noopener noreferrer">GitHub</a>
     </div>
